@@ -1,4 +1,4 @@
-<html lang="ru">{% load static %}
+<html lang="ru">{% load bootstrap5 %}
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,7 @@
             <a class="nav-link" href="#">Link</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
+            <a class="nav-link">Создать</a>
           </li>
         </ul>
         <form class="d-flex">
@@ -69,6 +69,32 @@
     </tbody>
 </table>
   </div>
+
+    <div class="container-sm">
+    <h2 class="text-center">Новое резюме</h2>
+  </div>
+
+        <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-8">
+          <form method="post" action="{% url 'slaves:index' %}" class="form">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons %}
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            {% endbuttons %}
+          </form>
+        </div>
+            <div class="col-sm-0 col-md-4">
+                <h5>Текст</h5>
+                <p>Мотивирующий текст</p>
+                <p>Мотивирующий текст</p>
+                <p>Мотивирующий текст</p>
+                <p>Мотивирующий текст</p>
+                <p>Мотивирующий текст</p>
+            </div>
+      </div>
+    </div>
 </main>
 
 <footer class="footer mt-auto py-3 bg-light">
