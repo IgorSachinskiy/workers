@@ -29,7 +29,7 @@
             <a class="nav-link" href="#">Link</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'slaves:create' %}">Создать</a>
+            <a class="nav-link">Создать</a>
           </li>
         </ul>
         <form class="d-flex">
@@ -45,31 +45,32 @@
   <div class="container-sm">
     <h1>{{ title }}</h1>
   </div>
-  <div class="container"
-    <p>List of slaves</p>
 
-    <table class="table">
-    <thead>
-     <tr>
-      <th scope="col">Владелец</th>
-      <th scope="col">Название</th>
-      <th scope="col">Зарплата</th>
-      <th scope="col">Зарегистрированно</th>
-     </tr>
-    </thead>
-    <tbody>
-      {% for item in queryset %}
-      <tr>
-        <td>{{ item.owner }}</td>
-        <td>{{ item.title }}</td>
-        <td>{{ item.money }}</td>
-        <td>{{ item.registered_in }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-</table>
+    <div class="container-sm">
+    <h2 class="text-center">Новое резюме</h2>
   </div>
 
+        <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-8">
+          <form method="post" action="{% url 'slaves:create' %}" class="form">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons %}
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            {% endbuttons %}
+          </form>
+        </div>
+            <div class="col-sm-0 col-md-4">
+                <h5>Текст</h5>
+                <p>Мотивирующий текст</p>
+                <p>Мотивирующий текст</p>
+                <p>Мотивирующий текст</p>
+                <p>Мотивирующий текст</p>
+                <p>Мотивирующий текст</p>
+            </div>
+      </div>
+    </div>
 </main>
 
 <footer class="footer mt-auto py-3 bg-light">
