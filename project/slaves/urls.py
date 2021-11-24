@@ -4,5 +4,5 @@ from project.slaves import views
 
 urlpatterns = [
     re_path('^$', views.index_view, name='index'),
-    re_path('^create/$', views.create_view, name='create')
+    re_path('^create/$', views.create_view, name='create'),
 ]

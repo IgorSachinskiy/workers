@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load bootstrap5 %}
+
+{% block "main" %}
+  <div class="container">
+    <h1>Регистрация</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h5>Регистрация прошла успешно</h5>
+        <p>Теперь вы можете войти в систему!</p>
+        <p><a href="{% url 'accounts:login' %}">Войти</a></p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
