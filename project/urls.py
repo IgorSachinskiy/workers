@@ -1,6 +1,8 @@
+from django.conf import settings
 from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from django.contrib import admin
 from django.contrib.auth.views import PasswordChangeView, PasswordChangeDoneView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path, include
 
 urlpatterns = [
@@ -15,7 +17,8 @@ urlpatterns = [
     path('accounts/', include(('project.accounts.urls', 'accounts'), namespace='accounts')),
     path('', include(('project.slaves.urls', 'index'), namespace='slaves')),
     path('admin/', admin.site.urls),
-
 ]
 
+if settings.OFFLINE:
+    urlpatterns += staticfiles_urlpatterns()
 
