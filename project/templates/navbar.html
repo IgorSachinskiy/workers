@@ -1,9 +1,8 @@
-<!-- Fixed navbar -->
+<!-- Fixed navbar -->{% load static %}
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-          <img src="https://upload.wikimedia.org/wikipedia/ru/f/f9/Philadelphia_Eagles_primary_logo.png" alt="" width="30" height="24">
-          Галера
+      <a class="navbar-brand" href="/">
+          <img src="{% static 'logo.jpg' %}" alt="Галера" title="Галера" height="50">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
