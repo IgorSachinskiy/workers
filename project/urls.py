@@ -15,6 +15,7 @@ urlpatterns = [
     path('reset/done/', PasswordResetCompleteView.as_view(), name='password_reset_complete'),
 
     path('accounts/', include(('project.accounts.urls', 'accounts'), namespace='accounts')),
+    path('forum/', include(('project.forum.urls', 'forum'), namespace='forum')),
     path('', include(('project.slaves.urls', 'index'), namespace='slaves')),
     path('admin/', admin.site.urls),
 ]
