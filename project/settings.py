@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'project.accounts',
     'project.forum',
     'project.slaves',
+    'project.video',
 
     'django.contrib.admin',
     'django.contrib.auth',
