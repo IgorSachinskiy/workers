@@ -4,28 +4,30 @@
 
 {% block "main" %}
 <div class="container">
-    {% for video in queryset %}
     <div class="row">
-        <div class="col">
-            <h4>{{ video.title }}</h4>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
+        {% for video in queryset %}
+        <div class="col-4">
+            <div>
                 <iframe src="{{ video.url }}"
                         title="{{ video.title }}" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
+            </div>
+            <div>
+                <p>{{ forloop.counter }}: {{ video.title }}</p>
+            </div>
+            {% if video.desc %}
+            <div>
+                <p><small>{{ video.desc }}</small></p>
+            </div>
+            {% endif %}
         </div>
+        {% if forloop.counter|divisibleby:"3" %}
     </div>
-    {% if video.desc %}
     <div class="row">
-        <div class="col">
-            <h4>{{ video.desc }}</h4>
-        </div>
+        {% endif %}
+        {% endfor %}
     </div>
-    {% endif %}
-    {% endfor %}
 </div>
 {% endblock %}
 
