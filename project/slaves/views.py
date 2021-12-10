@@ -9,7 +9,7 @@ def index_view(request):
     """Вью отображает главную страницу приложения"""
     qs = Resume.objects.all()
     context = {
-            'title': 'Рабы на галерах',
+            'title': 'Поиск работы',
             'queryset': qs,
             }
     return render(request, 'slaves/index.html', context)
